@@ -3,10 +3,8 @@ import Image from "next/image";
 export default function Index() {
   return (
     <div className=" flex space-x-2 w-full bg-latar-b">
-      <div className="w-16 h-auto bg-white">
-        Menu
-      </div>
-      <div className="w-full">
+      <div className="w-16 h-auto bg-white">Menu</div>
+      <div className="w-full pb-4">
         <header className="px-10 h-tinggi bg-white flex flex-col justify-center">
           <div className="h-3/5 flex flex-col justify-between">
             <nav className="bg-grey-light rounded-lg w-full ">
@@ -83,16 +81,15 @@ export default function Index() {
                 />
               </div>
             </div>
-
           </div>
-            <div className="w-full space-y-1 border-b space-y-5">
-              <div className="flex justify-between items-center py-1 ">
-                <p>Gambar Cover</p>
-                <button className=" text-blue-400 font-semibold text-14px py-2 px-8 rounded-full border border-blue-400">
-                  Upload
-                </button>
-              </div>
+          <div className="w-full space-y-1 border-b space-y-5">
+            <div className="flex justify-between items-center py-1 ">
+              <p>Gambar Cover</p>
+              <button className=" text-blue-400 font-semibold text-14px py-2 px-8 rounded-full border border-blue-400">
+                Upload
+              </button>
             </div>
+          </div>
 
           {/* <p className="flex space-x-1">
             {" "}
@@ -126,7 +123,7 @@ export default function Index() {
           </h1>
           <div className="w-lebar mx-auto bg-white py-10 px-10 space-y-8 mt-5 font-NunitoSans rounded-lg">
             <div className="flex flex-col space-y-3">
-              <label htmlFor="">Subject Email</label>
+              <label htmlFor="">Title Highlight</label>
               <input
                 type="text"
                 placeholder="Input subject email"
@@ -134,21 +131,24 @@ export default function Index() {
               />
             </div>
 
-            <div className="border rounded">
-              <div className="py-1 px-5 border-b">
-                {/* <Image src="/public/img/image 4.png" alt="" width={100} height={100} /> */}
+            <div className="flex flex-col space-y-3">
+              <label htmlFor="">Highlight Body</label>
+              <div className="border rounded">
+                <div className="py-1 px-5 border-b">
+                  {/* <Image src="/public/img/image 4.png" alt="" width={100} height={100} /> */}
+                </div>
+                <textarea
+                  name="komentar"
+                  rows="10"
+                  placeholder="Komentar"
+                  className=" w-full"
+                ></textarea>
               </div>
-              <textarea
-                name="komentar"
-                rows="10"
-                placeholder="Komentar"
-                className=" w-full"
-              ></textarea>
             </div>
 
             <div className="flex justify-between space-x-5">
               <div className="flex flex-col w-3/6  space-y-3">
-                <label htmlFor="">Subject Email</label>
+                <label htmlFor="">ILB Review Link</label>
                 <input
                   type="text"
                   placeholder="Input subject email"
@@ -157,7 +157,7 @@ export default function Index() {
               </div>
 
               <div className="flex flex-col w-3/6 space-y-3">
-                <label htmlFor="">Subject Email</label>
+                <label htmlFor="">Regulation Link</label>
                 <input
                   type="text"
                   placeholder="Input subject email"
@@ -167,7 +167,7 @@ export default function Index() {
             </div>
             <p className="flex space-x-1">
               {" "}
-              <span className="underline mr-2"> Tambah Gambar Lainnya</span>
+              <span className="underline mr-2">Tambah Link Lainnya</span>
               <Image
                 src="/images/plus-icon.png"
                 alt=""
@@ -179,7 +179,7 @@ export default function Index() {
         </div>
 
         <div className="w-lebar mx-auto   font-NunitoSans ">
-          <p className="flex space-x-1">
+          <p className="flex space-x-1 cursor-pointer">
             {" "}
             <span className="underline mr-2"> Add New Highlight</span>
             <Image src="/images/plus-icon.png" alt="" width={20} height={15} />
