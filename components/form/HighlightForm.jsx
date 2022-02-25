@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-const HighlightForm = ({ key, highlightIndex, handleChange }) => {
+const HighlightForm = ({ highlightIndex, handleChange }) => {
     const highlightNumber = highlightIndex + 1;
     return (
       <div className="w-lebar mx-auto py-10 font-NunitoSans">

@@ -12,6 +12,13 @@ export default function Index() {
   const [highlight, setHighlight] = useState([
     highlightDefaultData
   ]);
+  const [mlr, setMlr] = useState({
+    subjectEmail: null,
+    title: null,
+    subtitle: null,
+    catalog: null,
+    image: null
+  })
 
   const addHighlight = () => {
     setHighlight([
@@ -23,11 +30,9 @@ export default function Index() {
   const handleChangeHighlight = (indexHightlight, e) => {
     const currentHighlight = highlight;
     currentHighlight[indexHightlight].title = e.target.value;
-    console.log(e.target.name)
     setHighlight([
       ...currentHighlight
     ])
-    console.log(highlight)
   }
   return (
     <div className=" flex space-x-2 w-full bg-latar-b">
@@ -81,6 +86,7 @@ export default function Index() {
           <div className="flex flex-col space-y-3">
             <label htmlFor="">Subject Email</label>
             <input
+              name="subjectEmail"
               type="text"
               placeholder="Input subject email"
               className="bg-latar-b py-2 px-5 rounded"
@@ -92,6 +98,7 @@ export default function Index() {
               <div className="flex flex-col  space-y-3">
                 <label htmlFor="">Title Cover</label>
                 <input
+                  name="title"
                   type="text"
                   placeholder="Input subject email"
                   className="bg-latar-b py-2 px-5 rounded"
@@ -104,6 +111,7 @@ export default function Index() {
                 <label htmlFor="">Subtitle Cover</label>
                 <input
                   type="text"
+                  name="subtitle"
                   placeholder="Input subject email"
                   className="bg-latar-b py-2 px-5 rounded "
                 />
@@ -126,7 +134,7 @@ export default function Index() {
           </p> */}
 
           <div className="flex flex-col  w-full space-y-3 ">
-            <label htmlFor="">Subject Email</label>
+            <label htmlFor="">Catalog</label>
 
             <div className="flex items-center justify-between">
               <input
@@ -134,13 +142,14 @@ export default function Index() {
                 placeholder="Input subject email"
                 className="bg-latar-b py-2 px-5 rounded-tl rounded-bl w-full"
               />
-              <Image
-                src="/public/img/search.png"
-                alt=""
-                className="bg-latar-b py-2 w-8 px-1 rounded-tr rounded-br"
-                width={100}
-                height={100}
-              />
+              <div className="bg-latar-b py-2 w-8 px-1 rounded-tr rounded-br">
+                <Image
+                  src="/images/search-icon.png"
+                  alt=""
+                  width={15}
+                  height={15}
+                />
+              </div>
             </div>
           </div>
         </div>
