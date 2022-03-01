@@ -49,7 +49,76 @@ export default function Index() {
 
   return (
     <div className=" flex space-x-2 w-full bg-latar-b">
-      <div className="w-16 h-auto bg-white">Menu</div>
+      <div className="w-16 h-auto bg-white flex flex-col justify-between ">
+        <div className="flex flex-col items-center space-y-7 py-10 ">
+          <div className="">
+            <Image
+              src="/images/vector.png"
+              alt=""
+              width={20}
+              height={20}
+            />
+          </div>
+          <div className="">
+            <Image
+              src="/images/search-icon.png"
+              alt=""
+              width={20}
+              height={20}
+            />
+          </div>
+
+          <div className="bg-latar-b py-1 px-2 rounded">
+            <Image
+              src="/images/fi-ss-document.png"
+              alt=""
+              width={20}
+              height={20}
+            />
+          </div>
+          <div className="">
+            <Image
+              src="/images/fi-rs-calculator.png"
+              alt=""
+              width={20}
+              height={20}
+            />
+          </div>
+          <div className="">
+            <Image
+              src="/images/fi-rs-document-signed.png"
+              alt=""
+              width={20}
+              height={20}
+            />
+          </div>
+          <div className="">
+            <Image
+              src="/images/fi-rs-trophy.png"
+              alt=""
+              width={20}
+              height={20}
+            />
+          </div>
+          <div className="">
+            <Image
+              src="/images/fi-rs-credit-card.png"
+              alt=""
+              width={20}
+              height={20}
+            />
+          </div>
+        </div>
+
+        <div className="flex items-center justify-center border-t py-2">
+          <Image
+            src="/images/angle.png"
+            alt=""
+            width={20}
+            height={20}
+          />
+        </div>
+      </div>
       <div className="w-full pb-4">
         <header className="px-10 h-tinggi bg-white flex flex-col justify-center">
           <div className="h-3/5 flex flex-col justify-between">
@@ -136,7 +205,7 @@ export default function Index() {
           <div className="w-full space-y-1 border-b space-y-5">
             <div className="flex justify-between items-center py-1 ">
               <p>Gambar Cover</p>
-              <input type="file" className="hidden" id="cover-image"/>
+              <input type="file" className="hidden" id="cover-image" />
               <label htmlFor="cover-image" className=" text-blue-400 font-semibold text-14px py-2 px-8 rounded-full border border-blue-400">
                 Upload
               </label>
@@ -182,8 +251,8 @@ export default function Index() {
           </p>
         </div>
       </div>
-      {preview && <PreviewModal handleClose={handleClosePreview}/>}
-      {publishModal && <PublishModal handleClose={handleClosePublishModal}/>}
+      {preview && <PreviewModal handleClose={handleClosePreview} />}
+      {publishModal && <PublishModal handleClose={handleClosePublishModal} />}
     </div>
   );
 }
