@@ -1,6 +1,8 @@
 import { useState } from "react";
 import Image from "next/image";
 import HighlightForm from "../components/form/HighlightForm";
+import PreviewModal from "../components/modals/PreviewModal";
+import PublishModal from "../components/modals/PublishModal";
 
 export default function Index() {
   const highlightDefaultData = {
@@ -19,6 +21,8 @@ export default function Index() {
     catalog: null,
     image: null
   })
+  const [preview, setPreview] = useState(false);
+  const [publishModal, setPublishModal] = useState(false);
 
   const addHighlight = () => {
     setHighlight([
@@ -34,6 +38,15 @@ export default function Index() {
       ...currentHighlight
     ])
   }
+
+  const handleClosePreview = () => {
+    setPreview(!preview);
+  }
+
+  const handleClosePublishModal = () => {
+    setPublishModal(!publishModal)
+  }
+
   return (
     <div className=" flex space-x-2 w-full bg-latar-b">
       <div className="w-16 h-auto bg-white">Menu</div>
@@ -67,6 +80,7 @@ export default function Index() {
                   id="btnPreview"
                   type="button"
                   className=" px-4 py-1 border border-gray-300 text-gray-600 font-semibold  text-16px  hover:bg-black hover:bg-opacity-5 rounded "
+                  onClick={(e) => setPreview(!preview)}
                 >
                   Preview File
                 </button>
@@ -74,6 +88,7 @@ export default function Index() {
                   id="btnPublish"
                   type="button"
                   className=" px-4 py-1 border border-gray-300 text-white font-semibold  text-16px  hover:bg-black hover:bg-opacity-5 rounded  bg-gray-400 "
+                  onClick={(e) => setPublishModal(!publishModal)}
                 >
                   Pulish now
                 </button>
@@ -121,9 +136,10 @@ export default function Index() {
           <div className="w-full space-y-1 border-b space-y-5">
             <div className="flex justify-between items-center py-1 ">
               <p>Gambar Cover</p>
-              <button className=" text-blue-400 font-semibold text-14px py-2 px-8 rounded-full border border-blue-400">
+              <input type="file" className="hidden" id="cover-image"/>
+              <label htmlFor="cover-image" className=" text-blue-400 font-semibold text-14px py-2 px-8 rounded-full border border-blue-400">
                 Upload
-              </button>
+              </label>
             </div>
           </div>
 
@@ -155,7 +171,7 @@ export default function Index() {
         </div>
 
         {highlight.map((data, index) => {
-          return <HighlightForm key={index} highlightIndex={index} handleChange={handleChangeHighlight}/>
+          return <HighlightForm key={index} highlightIndex={index} handleChange={handleChangeHighlight} />
         })}
 
         <div className="w-lebar mx-auto   font-NunitoSans ">
@@ -166,6 +182,8 @@ export default function Index() {
           </p>
         </div>
       </div>
+      {preview && <PreviewModal handleClose={handleClosePreview}/>}
+      {publishModal && <PublishModal handleClose={handleClosePublishModal}/>}
     </div>
   );
 }
